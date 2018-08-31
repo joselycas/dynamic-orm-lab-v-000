@@ -64,7 +64,7 @@ class Student < InteractiveRecord
  end
 
  def self.find_by(hash)
-   value = hash.value.first
+   value = hash.first
    sql = "SELECT * FROM #{self.table_name} WHERE hash.keys.first = '#{value}'"
    DB[:conn].execute(sql)
  end
